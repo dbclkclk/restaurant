@@ -1,0 +1,24 @@
+version: '2'
+services:
+ api:
+   image: node:slim
+   command: chown -R `id -u` /data/d
+   volumes:
+     - /Users/deanclarke/docker/medullan/api:/usr/src/app
+   command: tail -f /dev/null
+   depends_on:
+     - database
+   ports:
+     - "8080:8080"
+ database:
+   image: torusware/speedus-mongo
+   ports:
+     - "27017:27017"
+   volumes:
+     - /Users/deanclarke/docker/medullan/api/data:/dev/shm
+#   environment:
+#     - DB_USER:root
+#     - DB_PWD:p@ssw0rd
+#     - DB_NAME:medullan
+#      - AUTH:y
+#   restart: always
