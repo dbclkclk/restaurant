@@ -33,7 +33,7 @@ models.waterline.initialize(models.config, function(err, modelss) {
 
 		});
 	} );
-	
+
 
 	router.get('/products:search', function(req, res){
 
@@ -106,10 +106,10 @@ models.waterline.initialize(models.config, function(err, modelss) {
 
 
 	server.use('/api', router);
-
+	var port = process.env.PORT || 5000;
   	// Start Server
-	server.listen("8080");
-	console.log("Listening on port 8080");
+	server.listen(port);
+	console.log("Listening on port "+port);
 
 });
 
