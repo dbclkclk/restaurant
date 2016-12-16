@@ -3,7 +3,7 @@ var server = express();
 var bodyParser = require('body-parser');
 var models = require('./config');
 
-
+console.log(models.config);
 models.waterline.initialize(models.config, function(err, modelss) {
 	if(err) throw err;
   
