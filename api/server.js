@@ -3,7 +3,6 @@ var server = express();
 var bodyParser = require('body-parser');
 var models = require('./config');
 
-console.log(models.config);
 models.waterline.initialize(models.config, function(err, modelss) {
 	if(err) throw err;
   
@@ -106,7 +105,7 @@ models.waterline.initialize(models.config, function(err, modelss) {
 
 
 	server.use('/api', router);
-	var port = process.env.PORT || 5000;
+	var port = process.env.PORT || 8080;
   	// Start Server
 	server.listen(port);
 	console.log("Listening on port "+port);
