@@ -4,7 +4,7 @@ services:
    image: node:slim
    command: chown -R `id -u` /data/d
    volumes:
-     - /Users/deanclarke/docker/medullan/api:/usr/src/app
+     - ./api:/usr/src/app
    command: tail -f /dev/null
    depends_on:
      - database
@@ -15,7 +15,7 @@ services:
    ports:
      - "27017:27017"
    volumes:
-     - /Users/deanclarke/docker/medullan/api/data:/dev/shm
+     - ./api/data:/dev/shm
 #   environment:
 #     - DB_USER:root
 #     - DB_PWD:p@ssw0rd
