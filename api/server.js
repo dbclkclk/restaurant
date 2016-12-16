@@ -35,8 +35,6 @@ models.waterline.initialize(models.config, function(err, modelss) {
 	} );
 	
 
-
-
 	router.get('/products:search', function(req, res){
 
 		modelss.collections.product.find().exec(function(err,products){
