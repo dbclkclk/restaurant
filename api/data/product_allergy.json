@@ -1,0 +1,27 @@
+[
+	{
+	 	"allergy_products":{"$oid":"5853f92b476f7407f25f3281"},
+	 	"product_allergies":{"$oid":"585404fc476f7407f25f32a7"}
+	},
+	{
+		
+	 	"allergy_products":{"$oid":"5143afc66d44e1ceb372121e"},
+	 	"product_allergies":{"$oid":"585404fc476f7407f25f32a8"}
+	},
+	{
+		"allergy_products":{"$oid":"5853f92b476f7407f25f3280"},
+	 	"product_allergies":{"$oid":"585404fc476f7407f25f32a8"}
+	},
+	{
+	 	"allergy_products":{"$oid":"5853f92b476f7407f25f327f"},
+	 	"product_allergies":{"$oid":"585404fc476f7407f25f32a9"}
+	},
+	{
+	 	"allergy_products":{"$oid":"5853f92b476f7407f25f3280"},
+	 	"product_allergies":{"$oid":"585404fc476f7407f25f32aa"}
+	},
+	{
+	 	"allergy_products":{"$oid":"5143afc66d44e1ceb372121e"},
+	 	"product_allergies":{"$oid":"585404fc476f7407f25f32ab"}
+	}
+]

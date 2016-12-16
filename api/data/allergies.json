@@ -1,0 +1,26 @@
+[
+  {
+      "_id": {"$oid":"5143afc66d44e1ceb372121e"},
+      "name": "Tomane allergy",
+      "severity": 3,
+      "severityDescription": "Out of a scale of 1-5 (1 being the highest), tomane poisoning can cause swollen lips. This allergy usually comes from tomatoes"
+  },
+  {
+      "_id": {"$oid":"5853f92b476f7407f25f327f"},
+      "name": "Shell fish allergy",
+      "severity": 1,
+      "severityDescription": "Out of a scale of 1-5 (1 being the highest), shell fish poisoining is very catastrophic"
+  },
+    {
+      "_id":{"$oid":"5853f92b476f7407f25f3280"},
+      "name": "Celiac allergy",
+      "severity": 1,
+      "severityDescription": "Out of a scale of 1-5 (1 being the highest), this allergy is caused by Gluten. This precipitate irritable bower syndrome or intestinal allergies."
+  },
+  {
+      "_id":{"$oid":"5853f92b476f7407f25f3281"},
+      "name": "Lactose Intolerant",
+      "severity": 3,
+      "severityDescription": "Out of a scale of 1-5 (1 being the highest), this allergy is caused by Milk. This precipitate diarrhea and indigestion."
+  }
+]

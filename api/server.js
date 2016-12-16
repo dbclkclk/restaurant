@@ -1,64 +1,119 @@
 var express = require("express");
-var app = express();
+var server = express();
 var bodyParser = require('body-parser');
-var Product = require("./app/models/product");
-var User = require("./app/models/user");
-var mongoose = require('mongoose');
+var models = require('./config');
 
 
-var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
-                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } }; 
+models.waterline.initialize(models.config, function(err, modelss) {
+	if(err) throw err;
+  
 
-
-
-var mongodbUri = 'mongodb://database:27017/test';
- 
-mongoose.connect(mongodbUri, options);
-
-var conn = mongoose.connection;             
- 
-conn.on('error', console.error.bind(console, 'connection error:'));  
- 
-conn.once('open', function() {
-
-
-			app.use(bodyParser.urlencoded({ extended: true }));
-			app.use(bodyParser.json());
-
-
-			var port = process.env.PORT || 8080;        
-
-
-			var router = express.Router();              
-
-			router.put('/user:id', function(req, res){
+	var router = express.Router(); 
 
 
 
+	server.use(bodyParser.urlencoded({ extended: true }));
+	server.use(bodyParser.json());
+
+
+
+
+	router.get('/products', function(req, res){
+
+		
+		modelss.collections.user.findOne({id:req.query.userid}).populate("allergies").exec(function(err,user){
+			
+			var allergyIds = user.allergies.map((a) => (a.id));
+
+			modelss.collections.product.find().populate("allergies",{id:allergyIds}).exec(function(err,products){
+
+				res.json(products);
 			});
 
-			router.get('/products', function(req, res){
 
-			   	console.log(console.log(mongoose.connection.readyState));
-			   	  Product.find(function(err, products) {
-			            if (err)
-			                res.send(err);
-
-			            res.json(products);
-			        });
-
-			} );
+		});
+	} );
 
 
-			app.use('/api', router);
+
+	router.get('/products:search', function(req, res){
+
+		modelss.collections.product.find().exec(function(err,products){
+			res.json(products);
+
+		});
+	} );
 
 
-			app.listen(port);
-			console.log('Listening on port ' + port);
+	router.get('/allergies', function(req, res){
+
+		modelss.collections.allergy.find().exec(function(err,allergies){
+			res.json(allergies);
+
+		});
+	} );
 
 
-                        
+	router.put('/user:id', function(req, res){
+
+		modelss.collections.user.findOne().where({id:res.id}).exec(function(err,user){
+			res.json(products);
+		});
+
+	});
+
+
+
+	router.post('/user', function(req, res){
+
+		if(req.id)
+			throw new Error("Id for this user, shouldn't be set");
+
+			modelss.collections.user.create(req.body).exec(function(err,user){
+
+			if(!err)
+			{
+				if(req.body.allergies)
+				{
+					user.allergies.add(req.body.allergies);
+
+					user.save(function(err)
+					{
+					    var result = null;
+						if(err)
+							result = err;
+						else
+							result = "/user:"+user.id;
+						res.json(result);	
+					});
+				}
+				else
+				{
+					result = "/user:"+user.id;
+					res.json(result);	
+				}
+			}
+			else
+			{
+				res.json(err)	
+			}
+
+
+			
+		});
+
+	});
+
+
+
+	server.use('/api', router);
+
+  	// Start Server
+	server.listen("8080");
+	console.log("Listening on port 8080");
+
 });
+
 
 
 
