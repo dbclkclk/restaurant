@@ -1,6 +1,6 @@
 {
   "scripts": 
   {
-    "postinstall": ["npm --prefix ./api install ./api", "./api/data/import_prod.sh"]
+    "postinstall": "npm --prefix ./api install ./api && ./api/data/import_prod.sh"
   }
 }
