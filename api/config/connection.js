@@ -15,5 +15,8 @@ module.exports.connections = {
       user: process.env.MONGO_USER ? process.env.MONGO_USER : "",
       password: process.env.MONGO_PASSWORD ? process.env.MONGO_PASSWORD : ""
     }
+  },
+  defaults: {
+    migrate: process.env.DBMIGRATE ? process.env.DBMIGRATE : 'alter'
   }
 };
