@@ -9,9 +9,11 @@ module.exports.connections = {
   connections: {
     mongoConnection: {
       adapter: 'mongodb',
-      host: 'database',
-      port:27017,
-      database: 'test'
+      host: process.env.MONGO_HOST,
+      port:process.env.MONGO_PORT,
+      database: process.env.MONGO_DB,
+      user: process.env.MONGO_USER,
+      password: process.env.MONGO_PASSWORD
     }
   }
 };
