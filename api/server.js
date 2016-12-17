@@ -45,6 +45,8 @@ models.waterline.initialize(models.config, function(err, modelss) {
 
 	router.get('/allergies', function(req, res){
 
+		console.log("I am here");
+
 		modelss.collections.allergy.find().exec(function(err,allergies){
 			res.json(allergies);
 
