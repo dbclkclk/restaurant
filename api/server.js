@@ -61,7 +61,6 @@ models.waterline.initialize(models.config, function(err, modelss) {
 	});
 
 
-
 	router.post('/user', function(req, res){
 
 		if(req.id)
