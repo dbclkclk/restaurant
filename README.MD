@@ -112,7 +112,7 @@ At this point, when the user makes a request to `products` endpoint, the API wil
 
 ```
 
-Note the second element in the JSOn doens't contain an allergy
+Note the second element in the JSON doens't contain an allergy
 
 
 ## Question 2
