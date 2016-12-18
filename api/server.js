@@ -3,9 +3,7 @@ var server = express();
 var bodyParser = require('body-parser');
 var models = require('./config');
 
-var foursQuareConfig = require("./config/foursquare");
-
-var Foursquare = require("node-foursquare")(foursQuareConfig);
+var Foursquare = require("./custom_modules/custom_foursquare");
 
 
 
@@ -191,6 +189,159 @@ models.waterline.initialize(models.config, function(err, modelss) {
 	      });
 	} );
 
+
+
+
+	router.post('/foursquare/photos', function(req, res){
+
+	    Foursquare.Venues.getPhotos(req.body.VENUE_ID,req.body.group,req.body,null,function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+	router.post('/foursquare/events', function(req, res){
+
+	    Foursquare.Venues.getEvents(req.body.VENUE_ID,null,function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+
+	router.post('/foursquare/likes', function(req, res){
+
+	    Foursquare.Venues.getLikes(req.body.VENUE_ID,null,function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+	router.post('/foursquare/nextvenues', function(req, res){
+
+	    Foursquare.Venues.getNextVenues(req.body.VENUE_ID,null,function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+
+	router.post('/foursquare/hours', function(req, res){
+
+	    Foursquare.Venues.getHours(req.body.VENUE_ID,null,function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+	router.post('/foursquare/links', function(req, res){
+
+	    Foursquare.Venues.getLinks(req.body.VENUE_ID,null,function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+
+
+	router.post('/foursquare/menu', function(req, res){
+
+	    Foursquare.Venues.getMenu(req.body.VENUE_ID,null,function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+
+
+	router.post('/foursquare/tips', function(req, res){
+
+	    Foursquare.Venues.getTips(req.body.VENUE_ID,req.body,null,function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+
+
+	router.post('/foursquare/listed', function(req, res){
+
+	    Foursquare.Venues.getListed(req.body.VENUE_ID,req.body,null,function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
 
 	server.use('/api', router);
 	var port = process.env.PORT || 8080;
