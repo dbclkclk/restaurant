@@ -69,7 +69,7 @@ At this point, the user will register along with his allergy preferences. See be
 
 At this point, when the user makes a request to `products` endpoint, the API will respond with a JSON containing products with conditional allergies that the user is allergice to. If the user isn't allergice to a product, then the inner allergic response will be empty. 
 
-##### GET `{endpoint}/products?userid={ID FROM Step #2 Response}`
+##### GET `{endpoint}/products?userid={USER ID FROM Step #2 JSON Response}`
 
 ##### JSON Response
 ```
