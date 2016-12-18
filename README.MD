@@ -25,7 +25,7 @@ You can access the API through endpoint `https://medullan.herokuapp.com/api`
 
 ## Question 1
 
-### Instruction on how to use the API & Assumptions
+### Instruction on how to use the API & Assumptions. **Remember for each JSON Request, set "Content-Type":"application/json"**:
 
 #### Step 1
 
@@ -117,7 +117,7 @@ Note the second element in the JSOn doens't contain an allergy
 
 ## Question 2
 
-Integration with Foursquare API
+Integration with Foursquare API. **Remember for each JSON Request, set "Content-Type":"application/json"**
 
 
 ### POST {endpoint}/foursquare/explore
