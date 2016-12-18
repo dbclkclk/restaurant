@@ -90,7 +90,7 @@ models.waterline.initialize(models.config, function(err, modelss) {
 
 	router.post('/foursquare/explore', function(req, res){
 
-	    Foursquare.Venues.explore(req.body.lat, req.body.long, req.body.near, req.body,null, function (error, data) {
+	    Foursquare.Venues.explore(req.body.lat, req.body.lng, req.body.near, req.body,null, function (error, data) {
 	        var result = null;
 	        if(error) {
 	          result = error.message;

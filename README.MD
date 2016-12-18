@@ -5,10 +5,10 @@
 	* Access through PaaS Heroku
 	* Run locally through Docker 
 
-#### 1 Run through Heroku
+#### 1. Run through Heroku
 You can access the API through endpoint `https://medullan.herokuapp.com/api`
 
-#### 2 Run locally through Docker 
+#### 2. Run locally through Docker 
 
 ##### Requirement
   
@@ -120,14 +120,72 @@ Note the second element in the JSOn doens't contain an allergy
 Integration with Foursquare API
 
 
-### POST {endpoint}/foursquare/explore
+### POST {endpoint}//foursquare/explore
 
-##### JSON Request
-```
-{
-  	"near":"name of user",
-    "llAcc":"",
-    "alt": ""
-}
-```
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/search) with the EXCEPTION of ll, use `lat' and `lng` parameters instead. 
 
+
+
+### POST {endpoint}/explore
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/explore) with the EXCEPTION of ll, use `lat' and `lng` parameters instead. 
+
+
+### POST {endpoint}/suggestcompletion
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/suggestcompletion) with the EXCEPTION of ll, use `lat' and `lng` parameters instead. 
+
+
+### GET {endpoint}/categories
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/categories). 
+
+
+### POST {endpoint}/trending
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/trending) with the EXCEPTION of ll, use `lat' and `lng` parameters instead. 
+
+
+### POST {endpoint}/photos
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/photos). 
+
+
+### POST {endpoint}/events
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/events).
+
+
+### POST {endpoint}/likes
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/likes).
+
+
+### POST {endpoint}/nextvenues
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/nextvenues).
+
+
+### POST {endpoint}/hours
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/hours).
+
+
+### POST {endpoint}/links
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/links).
+
+
+### POST {endpoint}/menu
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/menu).
+
+
+### POST {endpoint}/tips
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/tips).
+
+
+### POST {endpoint}/listed
+
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/listed).
