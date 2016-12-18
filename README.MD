@@ -120,7 +120,7 @@ Note the second element in the JSOn doens't contain an allergy
 Integration with Foursquare API
 
 
-### POST {endpoint}//foursquare/explore
+### POST {endpoint}/foursquare/explore
 
 In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/search) with the EXCEPTION of ll, use `lat' and `lng` parameters instead. 
 
