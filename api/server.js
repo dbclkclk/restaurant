@@ -20,7 +20,6 @@ models.waterline.initialize(models.config, function(err, modelss) {
 
 
 
-
 	router.get('/products', function(req, res){
 
 		
@@ -38,14 +37,6 @@ models.waterline.initialize(models.config, function(err, modelss) {
 	} );
 
 
-	router.get('/products:search', function(req, res){
-
-		modelss.collections.product.find().exec(function(err,products){
-			res.json(products);
-
-		});
-	} );
-
 
 	router.get('/allergies', function(req, res){
 
@@ -54,15 +45,6 @@ models.waterline.initialize(models.config, function(err, modelss) {
 
 		});
 	} );
-
-
-	router.put('/user:id', function(req, res){
-
-		modelss.collections.user.findOne().where({id:res.id}).exec(function(err,user){
-			res.json(products);
-		});
-
-	});
 
 
 	router.post('/user', function(req, res){
