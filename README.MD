@@ -20,13 +20,13 @@ You can access the API through endpoint `https://medullan.herokuapp.com/api`
   * Inside the same terminal, run `docker-machine ip`. Use this http://IP:8080 to access the API. 
 
 
- ## Question 1
+## Question 1
 
- ### Instruction on how to use the API & Assumptions
+### Instruction on how to use the API & Assumptions
 
- #### Step 1
+#### Step 1
 
- The assumption here is that the mobile app would send a request to get a list of Allergies for a new user. Upeon seeing the list, the user would select zero,one or more Allergies; the app would note these selection by noting `"id"`:
+The assumption here is that the mobile app would send a request to get a list of Allergies for a new user. Upeon seeing the list, the user would select zero,one or more Allergies; the app would note these selection by noting `"id"`:
 
 ##### GET `{endpoint}/allergies`
 
@@ -41,9 +41,9 @@ You can access the API through endpoint `https://medullan.herokuapp.com/api`
 ```
 
 
- #### Step 2
+#### Step 2
 
- At this point, the user will register along with his allergy preferences. See below:
+At this point, the user will register along with his allergy preferences. See below:
 
 ##### POST `{endpoint}/user`
 
@@ -62,9 +62,9 @@ You can access the API through endpoint `https://medullan.herokuapp.com/api`
 ```
 
 
- #### Step 3
+#### Step 3
 
- At this point, when the user makes a request to `products` endpoint, the API will respond with a JSON containing products with conditional allergies that the user is allergice to. If the user isn't allergice to a product, then the inner allergic response will be empty. 
+At this point, when the user makes a request to `products` endpoint, the API will respond with a JSON containing products with conditional allergies that the user is allergice to. If the user isn't allergice to a product, then the inner allergic response will be empty. 
 
 ##### GET `{endpoint}/products?userid={ID FROM Step #2 Response}`
 
