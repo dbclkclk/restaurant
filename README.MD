@@ -29,7 +29,7 @@ Instruction on how to use the API and Assumptions. **Remember for each JSON Requ
 
 #### Step 1
 
-The assumption here is that the mobile app would send a request to get a list of Allergies for a new user. Upeon seeing the list, the user would select zero,one or more Allergies; the app would note these selection by noting `"id"`:
+The assumption here is that the mobile app would send a request to get a list of Allergies for a new user. Upon seeing the list, the user would select zero,one or more Allergies; the app would note these selections by noting the `"id"`:
 
 ##### GET `{endpoint}/allergies`
 
