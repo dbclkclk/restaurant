@@ -122,18 +122,18 @@ Integration with Foursquare API
 
 ### POST {endpoint}/foursquare/explore
 
-In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/search) with the EXCEPTION of ll, use `lat' and `lng` parameters instead. 
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/search) with the EXCEPTION of ll, use `lat` and `lng` parameters instead. 
 
 
 
 ### POST {endpoint}/explore
 
-In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/explore) with the EXCEPTION of ll, use `lat' and `lng` parameters instead. 
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/explore) with the EXCEPTION of ll, use `lat` and `lng` parameters instead. 
 
 
 ### POST {endpoint}/suggestcompletion
 
-In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/suggestcompletion) with the EXCEPTION of ll, use `lat' and `lng` parameters instead. 
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/suggestcompletion) with the EXCEPTION of ll, use `lat` and `lng` parameters instead. 
 
 
 ### GET {endpoint}/categories
@@ -143,7 +143,7 @@ In  your request body, you can use the same request parameter as what's in the F
 
 ### POST {endpoint}/trending
 
-In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/trending) with the EXCEPTION of ll, use `lat' and `lng` parameters instead. 
+In  your request body, you can use the same request parameter as what's in the Foursquare [documentation](https://developer.foursquare.com/docs/venues/trending) with the EXCEPTION of ll, use `lat` and `lng` parameters instead. 
 
 
 ### POST {endpoint}/photos
