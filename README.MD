@@ -25,7 +25,7 @@ You can access the API through endpoint `https://medullan.herokuapp.com/api`
 
 ## Question 1
 
-### Instruction on how to use the API & Assumptions. **Remember for each JSON Request, set "Content-Type":"application/json"**:
+Instruction on how to use the API and Assumptions. **Remember for each JSON Request, set "Content-Type":"application/json"**:
 
 #### Step 1
 
