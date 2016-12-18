@@ -9,8 +9,11 @@
 You can access the API through endpoint `https://medullan.herokuapp.com/api`
 
 #### 2 Run locally through Docker 
+
 ##### Requirement
+  
   * Docker installation with Docker-Compose
+
 ##### Setup 
   * Clone https://github.com/dbclkclk/restaurant.git
   * cd to the clone directory until you see a `docker-compose.yml`
