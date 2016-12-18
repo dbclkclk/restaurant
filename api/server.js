@@ -3,6 +3,12 @@ var server = express();
 var bodyParser = require('body-parser');
 var models = require('./config');
 
+var foursQuareConfig = require("./config/foursquare");
+
+var Foursquare = require("node-foursquare")(foursQuareConfig);
+
+
+
 models.waterline.initialize(models.config, function(err, modelss) {
 	if(err) throw err;
   
@@ -101,6 +107,89 @@ models.waterline.initialize(models.config, function(err, modelss) {
 
 	});
 
+
+	router.post('/foursquare/explore', function(req, res){
+
+	    Foursquare.Venues.explore(req.body.lat, req.body.long, req.body.near, req.body,null, function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+
+	router.post('/foursquare/search', function(req, res){
+
+	    Foursquare.Venues.search(req.body.lat, req.body.long, req.body.near, req.body,null, function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+
+	router.post('/foursquare/suggestcompletion', function(req, res){
+
+	    Foursquare.Venues.getSuggestcompletion(req.body.lat, req.body.long, req.body.query, req.body,null, function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+
+	router.get('/foursquare/categories', function(req, res){
+
+	    Foursquare.Venues.getCategories(null,null, function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
+
+
+
+	router.post('/foursquare/trending', function(req, res){
+
+	    Foursquare.Venues.getTrending(req.body.lat,req.body.lng, req.body,null,function (error, data) {
+	        var result = null;
+	        if(error) {
+	          result = error.message;
+	        }
+	        else {
+	          result = data;
+
+	        }
+	        res.json(result);
+	      });
+	} );
 
 
 	server.use('/api', router);
