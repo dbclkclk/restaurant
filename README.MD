@@ -20,7 +20,7 @@ You can access the API through endpoint `https://medullan.herokuapp.com/api`
   * Run `docker-compose up`
   * Open a new Docker Terminal and Run -> `docker exec -i medullan_database_1 /dev/shm/import.sh`. This is to import test data inside your Mongo DB container
   * Inside the said terminal, run -> `docker exec -it medullan_api_1 node /usr/src/app/server.js`. This is to start your node webserver. 
-  * Inside the same terminal, run `docker-machine ip`. Use this http://IP:8080 to access the API. 
+  * Inside the same terminal, run `docker-machine ip`. Use this http://IP:8080/api to access the API. 
 
 
 ## Question 1
