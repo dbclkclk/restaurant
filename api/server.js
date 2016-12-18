@@ -80,9 +80,6 @@ models.waterline.initialize(models.config, function(err, modelss) {
 			{
 				res.json(err)	
 			}
-
-
-			
 		});
 
 	});
